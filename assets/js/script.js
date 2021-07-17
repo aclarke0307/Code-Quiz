@@ -85,7 +85,7 @@ newDiv.setAttribute("id", "newDiv");
          newDiv.textContent = "Correct!!";
      }else {
          totalSeconds =totalSeconds - penalty;
-         newDiv.textContent = "Wrong..The correct answer is" + options[optionsIndex].answer;
+         newDiv.textContent = "Wrong..The correct answer is" + " " + options[optionsIndex].answer;
 
      }
     }
@@ -97,4 +97,4 @@ newDiv.setAttribute("id", "newDiv");
         render(optionsIndex);
     }
     questionsEl.appendChild(newDiv);
-}
+};
