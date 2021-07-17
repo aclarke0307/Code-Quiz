@@ -3,6 +3,8 @@ var startTimeEl = document.querySelector("#startTime");
 var beginEl = document.querySelector("#begin");
 var questionsEl = document.querySelector("#questions");
 var containerEl = document.querySelector("#container");
+var score = 0;
+var optionsIndex= 0;
 //var for an array for options
 var options = [
     {
@@ -31,3 +33,24 @@ var options = [
         answer: "console.log"
     },
 ];
+//timed section
+
+var totalSeconds = 80;
+var penalty = 10;
+var holdInterval = 0;
+var olNew = document.createElement("ol");
+
+beginEl.addEventListener("click", function(){
+    if(holdInterval === 0){
+        holdInterval = setInterval(function(){
+            totalSeconds--;
+            startTimeEl.textContent = "Time:" + totalSeconds;
+        if(totalSeconds <= 0){
+            clearInterval(holdInterval);
+            allDone();
+            startTimeEl.textContent = "Time's up";
+        }
+        }, 1000);
+    }
+    render(optionsIndex);
+});
