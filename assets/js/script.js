@@ -142,11 +142,12 @@ function allDone() {
     backbutton.textContent ="Try Again";
 
     questionsEl.appendChild(backbutton);
+
     //backbutton listener to begin page 
     backbutton.addEventListener("click", function(){
         window.location.replace("./index.html");
     });
-
+    // listener for submit page
     newSubmit.addEventListener("click", function() {
         var initials = newInput.value;
         if (initials === null){
